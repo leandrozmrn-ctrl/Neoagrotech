@@ -26,86 +26,348 @@
   </header>
 
   <nav aria-label="Navegación principal">
-    <a href="#inicio">Inicio</a>
-    <a href="#mision">Nuestra Misión</a>
-    <a href="#seguros">Seguros</a>
-    <a href="#maquinaria">Maquinaria</a>
-    <a href="#nombre">NeoAgroTech</a>
-    <a href="#testimonios">Testimonios</a>
-    <a href="#contacto">Contacto</a>
+    <a class="nav-tab" href="#inicio">Inicio</a>
+    <a class="nav-tab" href="#mision">Nuestra Misión</a>
+    <a class="nav-tab" href="#seguros">Seguros</a>
+    <a class="nav-tab" href="#maquinarias">Maquinarias</a>
+    <a class="nav-tab" href="#neoagrotech">NeoAgroTech</a>
+    <a class="nav-tab" href="#testimonios">Testimonios</a>
+    <a class="nav-tab" href="#contacto">Contacto</a>
   </nav>
 
-  <main id="inicio" tabindex="-1">
-    <section class="hero">
+  <main>
+    <!-- INICIO -->
+    <section id="inicio" class="hero">
       <div class="container">
-        <h2>Bienvenido a NeoAgroTech</h2>
+        <h2>Innovación y seguridad para tu campo</h2>
         <p>
-          Unimos innovación, agricultura y tecnología para ofrecer soluciones seguras y rentables al campo.
+          NeoAgroTech conecta datos, asesoría técnica y seguros agrícolas para proteger tu inversión y ayudarte a tomar decisiones con confianza.
+          Diseñado para Chile: siembra, maquinaria y retorno referencial del 5% al 10%.
         </p>
-        <a href="#contacto" class="btn">Contáctanos</a>
+
+        <div class="hero-actions">
+          <a href="#seguros" class="btn btn--ghost">Ver seguros</a>
+          <a href="#contacto" class="btn">Solicitar cotización</a>
+        </div>
+
+        <div class="stats-grid" role="list" aria-label="Beneficios principales">
+          <div class="stat" role="listitem">
+            <div class="stat-icon" aria-hidden="true">🧑‍🌾</div>
+            <div class="stat-title">Asesoría agronómica</div>
+            <div class="stat-desc">Diagnóstico y acompañamiento durante tu campaña.</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="stat-icon" aria-hidden="true">🛡️</div>
+            <div class="stat-title">Cobertura integral</div>
+            <div class="stat-desc">Siembra y maquinaria con planes escalables.</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="stat-icon" aria-hidden="true">📈</div>
+            <div class="stat-title">Retorno referencial</div>
+            <div class="stat-desc">Entre 5% y 10% según plan y nivel de inversión.</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="mision" class="section">
+    <!-- NUESTRA MISIÓN -->
+    <section id="mision" class="section section--card">
       <h2>Nuestra Misión</h2>
-      <p>Modernizar la agricultura con herramientas tecnológicas y planes de protección que garanticen la tranquilidad de nuestros clientes.</p>
-    </section>
+      <div class="split">
+        <div>
+          <p class="lead">
+            Modernizamos la agricultura con herramientas tecnológicas y planes de protección pensados para el ritmo real del campo:
+            estaciones, variables climáticas y operación diaria de maquinaria.
+          </p>
+          <ul class="check-list">
+            <li>Priorizamos coberturas que reduzcan la incertidumbre en siembra y operación.</li>
+            <li>Integramos acompañamiento técnico para mejorar decisiones (no solo “reaccionar”).</li>
+            <li>Diseñamos planes con retorno referencial para incentivar continuidad y mejora.</li>
+          </ul>
+          <p class="note">
+            Valores referenciales: el precio final se ajusta según cultivo, zona, historial y alcance de la póliza.
+          </p>
+        </div>
 
-    <section id="seguros" class="section">
-      <h2>Seguros de Siembra y Maquinaria</h2>
-      <div class="card-container">
-        <article class="card" aria-label="Plan Bajo">
-          <h3>Plan Bajo</h3>
-          <p><strong>Retorno de ganancia del 5%</strong></p>
-        </article>
-        <article class="card" aria-label="Plan Medio">
-          <h3>Plan Medio</h3>
-          <p><strong>Retorno de ganancia del 7%</strong></p>
-        </article>
-        <article class="card" aria-label="Plan Alto">
-          <h3>Plan Alto</h3>
-          <p><strong>Retorno de ganancia del 10%</strong></p>
-        </article>
+        <div class="mission-box">
+          <h3 class="subheading">Cómo trabajamos</h3>
+          <ol class="steps">
+            <li>Levantamos tu contexto: cultivo, maquinaria, tiempos de campaña y riesgos.</li>
+            <li>Te proponemos un plan (Bajo/Medio/Alto) con coberturas y retorno estimado.</li>
+            <li>Te acompañamos en la gestión para reducir interrupciones operativas.</li>
+          </ol>
+          <div class="mini-banner" role="note">
+            <div class="mini-banner-title">Enfoque “campo primero”</div>
+            <div class="mini-banner-desc">Menos papeleo, más claridad y respuestas.</div>
+          </div>
+        </div>
       </div>
-      <div class="retorno-section">
-        <p>Protege tus siembras frente a riesgos climáticos y asegura tu maquinaria agrícola.</p>
-      </div>
     </section>
 
-    <section id="maquinaria" class="section">
-      <h2>Maquinaria</h2>
-      <p>Asesoría y respaldo para el uso de maquinaria moderna, optimizando procesos y reduciendo costos.</p>
-    </section>
-
-    <section id="nombre" class="section">
-      <h2>¿Por qué NeoAgroTech?</h2>
-      <p>
-        <strong>Neo</strong>: lo nuevo, lo innovador.<br />
-        <strong>Agro</strong>: la raíz de nuestro trabajo, el campo.<br />
-        <strong>Tech</strong>: la tecnología que transforma y potencia la producción agrícola.
+    <!-- SEGUROS -->
+    <section id="seguros" class="section section--card">
+      <h2>Seguros (Siembra y Maquinaria)</h2>
+      <p class="lead">
+        Elige el plan que calza mejor con tu inversión. A continuación tienes <strong>precios aproximados en Chile</strong>
+        y un cotizador rápido para estimar una prima referencial.
       </p>
+
+      <div class="plans-grid" aria-label="Planes disponibles">
+        <article class="plan-card plan-card--bajo">
+          <div class="plan-head">
+            <h3>Plan Bajo 🌱</h3>
+            <div class="badge">Retorno 5%</div>
+          </div>
+          <p class="plan-text">
+            Ideal para campañas donde buscas una protección esencial con un costo controlado.
+          </p>
+          <div class="price-block">
+            <div class="price-label">Prima anual referencial</div>
+            <div class="price-value">
+              0,8%–1,1%
+              <span class="price-sub">del valor asegurado</span>
+            </div>
+            <div class="price-example">Ejemplo: para $10.000.000 CLP → $80.000 a $110.000</div>
+          </div>
+          <ul class="check-list check-list--compact">
+            <li>Cobertura base para riesgos de campaña.</li>
+            <li>Gestión y acompañamiento inicial.</li>
+            <li>Soporte ante eventos operativos.</li>
+          </ul>
+        </article>
+
+        <article class="plan-card plan-card--medio">
+          <div class="plan-head">
+            <h3>Plan Medio 🛡️</h3>
+            <div class="badge">Retorno 7%</div>
+          </div>
+          <p class="plan-text">
+            Recomendado para agricultores que buscan mayor estabilidad en siembra y continuidad operativa.
+          </p>
+          <div class="price-block">
+            <div class="price-label">Prima anual referencial</div>
+            <div class="price-value">
+              1,1%–1,4%
+              <span class="price-sub">del valor asegurado</span>
+            </div>
+            <div class="price-example">Ejemplo: para $10.000.000 CLP → $110.000 a $140.000</div>
+          </div>
+          <ul class="check-list check-list--compact">
+            <li>Mejor cobertura para eventos de campaña.</li>
+            <li>Seguimiento y recomendaciones técnicas.</li>
+            <li>Priorización en gestión de siniestros.</li>
+          </ul>
+        </article>
+
+        <article class="plan-card plan-card--alto">
+          <div class="plan-head">
+            <h3>Plan Alto 🚜</h3>
+            <div class="badge">Retorno 10%</div>
+          </div>
+          <p class="plan-text">
+            Para inversiones mayores o condiciones con más variabilidad: maximiza el respaldo y el retorno referencial.
+          </p>
+          <div class="price-block">
+            <div class="price-label">Prima anual referencial</div>
+            <div class="price-value">
+              1,4%–1,9%
+              <span class="price-sub">del valor asegurado</span>
+            </div>
+            <div class="price-example">Ejemplo: para $10.000.000 CLP → $140.000 a $190.000</div>
+          </div>
+          <ul class="check-list check-list--compact">
+            <li>Cobertura reforzada para siembra y operación.</li>
+            <li>Acompañamiento más frecuente en campaña.</li>
+            <li>Mayor retorno referencial para incentivar continuidad.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="split split--calculator">
+        <aside class="estimator" aria-label="Cotizador referencial de seguros">
+          <h3 class="subheading">Cotiza en segundos</h3>
+          <p class="small">
+            Inserta tu <strong>valor de inversión asegurada</strong> y el plan que te interesa para obtener un estimado referencial.
+          </p>
+
+          <div class="field">
+            <label for="valor-asegurado">Valor de inversión asegurada (CLP)</label>
+            <input id="valor-asegurado" type="number" min="0" step="1000" value="10000000" />
+          </div>
+
+          <div class="field">
+            <label for="plan-selector">Plan</label>
+            <select id="plan-selector">
+              <option value="bajo" selected>Plan Bajo (Retorno 5%)</option>
+              <option value="medio">Plan Medio (Retorno 7%)</option>
+              <option value="alto">Plan Alto (Retorno 10%)</option>
+            </select>
+          </div>
+
+          <div class="estimator-actions">
+            <button type="button" id="cotizar-btn">Actualizar estimado</button>
+          </div>
+
+          <div class="estimator-results" aria-live="polite">
+            <div class="result-line">
+              <span>Prima anual estimada:</span>
+              <strong><span id="prima-result">$—</span></strong>
+            </div>
+            <div class="result-line">
+              <span>Retorno total anual estimado:</span>
+              <strong><span id="retorno-result">$—</span></strong>
+            </div>
+            <div class="result-line">
+              <span>Retorno trimestral estimado:</span>
+              <strong><span id="retorno-trim-result">$—</span></strong>
+            </div>
+          </div>
+
+          <p class="small note">
+            Estos cálculos son referenciales. El precio final se define con evaluación técnica, zona y alcance de cobertura.
+          </p>
+        </aside>
+
+        <div class="calculator-info">
+          <div class="info-card">
+            <h3 class="subheading">¿Qué cubren nuestros planes?</h3>
+            <p class="small">
+              Priorizamos coberturas que impactan la continuidad de tu operación: riesgos de campaña y protección de equipos.
+              Adicionalmente, incluimos acompañamiento técnico para mejorar decisiones.
+            </p>
+            <ul class="check-list">
+              <li>Siembra: respaldo ante riesgos de campaña (dependiendo del cultivo y zona).</li>
+              <li>Maquinaria: protección para operación y contingencias asociadas.</li>
+              <li>Gestión: seguimiento y orientación en procesos de atención.</li>
+            </ul>
+          </div>
+
+          <div class="info-card info-card--alt">
+            <h3 class="subheading">Retorno referencial</h3>
+            <p class="small">
+              El retorno se expresa como un porcentaje anual referencial del valor asegurado, distribuido según el marco del plan.
+              Tu cotización define el detalle final.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="testimonios" class="section">
+    <!-- MAQUINARIAS -->
+    <section id="maquinarias" class="section section--card">
+      <h2>Maquinarias</h2>
+      <p class="lead">
+        La maquinaria no es un gasto: es productividad. Nuestro enfoque combina protección y asesoría para reducir tiempos muertos y riesgos en terreno.
+      </p>
+
+      <div class="split">
+        <div class="mission-box mission-box--wide">
+          <h3 class="subheading">Protección para tu flota agrícola</h3>
+          <ul class="check-list">
+            <li>Soporte en operación y gestión de contingencias.</li>
+            <li>Respaldo ante eventos que afecten equipos y continuidad de trabajo.</li>
+            <li>Priorización según el plan contratado (Bajo/Medio/Alto).</li>
+          </ul>
+          <p class="small note">
+            Los alcances exactos dependen del tipo de maquinaria, año, uso y cobertura seleccionada.
+          </p>
+        </div>
+
+        <div class="mission-box mission-box--wide">
+          <h3 class="subheading">Proceso de acompañamiento</h3>
+          <ol class="steps">
+            <li>Evaluamos tu realidad operativa (horas, rutas, temporadas y equipos).</li>
+            <li>Definimos coberturas y recomendaciones para reducir incidentes.</li>
+            <li>Acompañamos en gestión para que puedas mantener tu calendario.</li>
+          </ol>
+
+          <div class="mini-banner mini-banner--leaf" role="note">
+            <div class="mini-banner-title">Mejorar continuidad</div>
+            <div class="mini-banner-desc">Menos pausas, más trabajo hecho.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEOAGROTECH -->
+    <section id="neoagrotech" class="section section--card">
+      <h2>NeoAgroTech</h2>
+      <p class="lead">
+        Nuestro nombre resume la filosofía del proyecto: tecnología aplicada al campo y seguridad para convertir riesgos en decisiones.
+      </p>
+
+      <div class="feature-grid" role="list" aria-label="Componentes de NeoAgroTech">
+        <div class="feature-item" role="listitem">
+          <div class="feature-icon" aria-hidden="true">⚙️</div>
+          <h3 class="feature-title">Neo</h3>
+          <p class="small">
+            Enfoque moderno: datos, acompañamiento y mejoras continuas para tu operación.
+          </p>
+        </div>
+
+        <div class="feature-item" role="listitem">
+          <div class="feature-icon" aria-hidden="true">🌾</div>
+          <h3 class="feature-title">Agro</h3>
+          <p class="small">
+            Lo importante es el terreno: comprendemos tiempos de campaña, clima, cultivo y maquinaria.
+          </p>
+        </div>
+
+        <div class="feature-item" role="listitem">
+          <div class="feature-icon" aria-hidden="true">📡</div>
+          <h3 class="feature-title">Tech</h3>
+          <p class="small">
+            Tecnología para simplificar procesos y mejorar la respuesta ante eventos en campaña.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="section section--card">
       <h2>Testimonios</h2>
+
       <div class="testimonio">
-        <p>“Gracias a NeoAgroTech pude asegurar mi siembra y tener tranquilidad frente a las lluvias inesperadas. Elegí el plan medio y obtuve un retorno del 7%.”</p>
-        <p><strong>— Juan Pérez</strong></p>
+        <p class="quote">
+          “Gracias a NeoAgroTech pude asegurar mi siembra y tener tranquilidad frente a lluvias inesperadas.
+          Elegí el plan Medio y mi retorno referencial fue del 7%.”
+        </p>
+        <p><strong>— Juan Pérez, Región del Maule</strong></p>
       </div>
+
       <div class="testimonio">
-        <p>“La maquinaria respaldada por NeoAgroTech me ayudó a reducir tiempos de cosecha. Con el plan alto, logré un retorno del 10%.”</p>
-        <p><strong>— María González</strong></p>
+        <p class="quote">
+          “La maquinaria respaldada por NeoAgroTech me ayudó a reducir tiempos muertos en cosecha.
+          Con el plan Alto, logré un retorno referencial del 10%.”
+        </p>
+        <p><strong>— María González, Biobío</strong></p>
+      </div>
+
+      <div class="testimonio">
+        <p class="quote">
+          “Elegimos un plan Bajo para mantener costos controlados, pero con el apoyo técnico se notó la diferencia.
+          La claridad del proceso y la asesoría me dieron confianza.”
+        </p>
+        <p><strong>— Carlos Ramírez, O'Higgins</strong></p>
       </div>
     </section>
 
-    <section id="contacto" class="section">
+    <!-- CONTACTO -->
+    <section id="contacto" class="section section--card">
       <h2>Contacto</h2>
+      <p class="lead">
+        Cuéntanos tu situación y te ayudaremos a elegir el plan que mejor se ajusta a tu campaña.
+        Respuesta rápida y acompañamiento desde el inicio.
+      </p>
 
       <div class="contact-grid">
         <div class="contact-card">
           <p><strong>Teléfono:</strong> <a href="tel:+56912345678">+56 9 1234 5678</a></p>
           <p><strong>Correo:</strong> <a href="mailto:contacto@neoagrotech.cl">contacto@neoagrotech.cl</a></p>
           <p><strong>Dirección:</strong> Concepción, Región del Biobío, Chile</p>
+          <p class="small note">
+            Horario referencial: Lun–Vie 09:00–18:00. Si envías el formulario, prellenamos tu correo con la información.
+          </p>
         </div>
 
         <form id="contact-form" class="contact-form" novalidate>
@@ -120,6 +382,15 @@
           <label>
             Teléfono (opcional)
             <input id="telefono" name="telefono" type="tel" autocomplete="tel" />
+          </label>
+          <label>
+            ¿Qué te interesa?
+            <select id="interes" name="interes">
+              <option value="Seguro de Siembra">Seguro de Siembra</option>
+              <option value="Seguro de Maquinaria">Seguro de Maquinaria</option>
+              <option value="Plan con Retorno (5% - 10%)">Plan con Retorno (5% - 10%)</option>
+              <option value="Quiero Asesoría Técnica">Quiero Asesoría Técnica</option>
+            </select>
           </label>
           <label>
             Mensaje

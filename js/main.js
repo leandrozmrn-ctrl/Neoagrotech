@@ -102,6 +102,8 @@ function handleFormSubmit(event) {
   const nombre = document.getElementById("nombre").value.trim();
   const email = document.getElementById("email").value.trim();
   const telefono = document.getElementById("telefono").value.trim();
+  const interesEl = document.getElementById("interes");
+  const interes = interesEl ? interesEl.value : "";
   const mensaje = document.getElementById("mensaje").value.trim();
 
   if (!nombre || !email || !mensaje) return;
@@ -115,6 +117,7 @@ function handleFormSubmit(event) {
     `Nombre: ${nombre}`,
     `Correo: ${email}`,
     `Teléfono: ${telefono || "-"}`,
+    `Interés: ${interes || "-"}`,
     "",
     "Mensaje:",
     mensaje,
@@ -148,6 +151,105 @@ document.addEventListener('click', function(event) {
 // Enlazar eventos al DOM (para que el formulario funcione en GitHub Pages)
 if (contactForm) {
   contactForm.addEventListener("submit", handleFormSubmit);
+}
+
+// ============================================================
+// Cotizador referencial de seguros (estático, sin backend)
+// ============================================================
+const valorInput = document.getElementById("valor-asegurado");
+const planSelector = document.getElementById("plan-selector");
+const cotizarBtn = document.getElementById("cotizar-btn");
+const primaResult = document.getElementById("prima-result");
+const retornoResult = document.getElementById("retorno-result");
+const retornoTrimResult = document.getElementById("retorno-trim-result");
+
+function formatCLP(n) {
+  if (!Number.isFinite(n)) return "$—";
+  return new Intl.NumberFormat("es-CL", {
+    style: "currency",
+    currency: "CLP",
+    maximumFractionDigits: 0,
+  }).format(n);
+}
+
+const planConfig = {
+  bajo: { primaPctMin: 0.008, primaPctMid: 0.01, primaPctMax: 0.011, retorno: 0.05 },
+  medio: { primaPctMin: 0.011, primaPctMid: 0.0135, primaPctMax: 0.014, retorno: 0.07 },
+  alto: { primaPctMin: 0.014, primaPctMid: 0.018, primaPctMax: 0.019, retorno: 0.1 },
+};
+
+function calcularEstimado() {
+  if (!valorInput || !planSelector) return;
+
+  const valor = Number(valorInput.value);
+  const plan = planSelector.value;
+
+  if (!valor || valor <= 0 || !planConfig[plan]) {
+    if (primaResult) primaResult.textContent = "$—";
+    if (retornoResult) retornoResult.textContent = "$—";
+    if (retornoTrimResult) retornoTrimResult.textContent = "$—";
+    return;
+  }
+
+  const cfg = planConfig[plan];
+
+  // Prima anual referencial (estimación usando el valor medio)
+  const primaAnual = valor * cfg.primaPctMid;
+  const retornoAnual = valor * cfg.retorno;
+  const retornoTrimestral = retornoAnual / 4;
+
+  if (primaResult) primaResult.textContent = formatCLP(primaAnual);
+  if (retornoResult) retornoResult.textContent = formatCLP(retornoAnual);
+  if (retornoTrimResult) retornoTrimResult.textContent = formatCLP(retornoTrimestral);
+}
+
+if (cotizarBtn) {
+  cotizarBtn.addEventListener("click", calcularEstimado);
+}
+if (valorInput) {
+  valorInput.addEventListener("input", () => {
+    // Mantener la UX: no recalcular en cada tecla si hay un botón.
+    // Aun así, recalculamos si ya hay resultados.
+    calcularEstimado();
+  });
+}
+if (planSelector) {
+  planSelector.addEventListener("change", calcularEstimado);
+}
+
+// Calcula al cargar si ya existe el cotizador
+calcularEstimado();
+
+// ============================================================
+// Resaltar pestaña del menú según scroll
+// ============================================================
+const navLinks = Array.from(document.querySelectorAll("nav a.nav-tab[href^=\"#\"]"));
+const navById = {};
+navLinks.forEach((a) => {
+  const id = a.getAttribute("href").replace("#", "");
+  navById[id] = a;
+});
+
+const sectionIds = ["inicio", "mision", "seguros", "maquinarias", "neoagrotech", "testimonios", "contacto"];
+const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
+
+if (navLinks.length > 0 && sections.length > 0) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visible) return;
+
+      const id = visible.target.id;
+      Object.keys(navById).forEach((k) => navById[k].classList.remove("active"));
+      if (navById[id]) navById[id].classList.add("active");
+    },
+    { rootMargin: "-20% 0px -70% 0px", threshold: [0.12, 0.25, 0.45, 0.65] }
+  );
+
+  sections.forEach((s) => observer.observe(s));
 }
 
 

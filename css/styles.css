@@ -601,3 +601,440 @@ html {
   }
 }
 
+/* NeoAgroTech - Rediseño (variables + estilos para la nueva estructura) */
+:root {
+  --green: #2e7d32;
+  --green-dark: #1b5e20;
+  --bg: #f5f5f5;
+  --white: #fff;
+  --text: #333;
+  --muted: #666;
+  --danger: #d32f2f;
+  --focus: rgba(46, 125, 50, 0.35);
+}
+
+.nav-tab.active {
+  background-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.12) inset;
+}
+
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: none;
+}
+
+.btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.08);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 2.5rem auto 0;
+  max-width: 1200px;
+  padding: 0 0.25rem;
+}
+
+.stat {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  padding: 1.25rem 1.25rem;
+  backdrop-filter: blur(6px);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-title {
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.2px;
+  color: var(--white);
+}
+
+.stat-desc {
+  font-size: 0.98rem;
+  opacity: 0.95;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.section--card {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  margin: 2.5rem auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.section--card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: radial-gradient(circle at 10% 0%, rgba(46, 125, 50, 0.18), transparent 55%),
+              radial-gradient(circle at 90% 20%, rgba(27, 94, 32, 0.12), transparent 60%);
+  pointer-events: none;
+}
+
+.section--card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--muted);
+  text-align: center;
+  max-width: 980px;
+  margin: 0 auto 1.75rem;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.small {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.split--calculator {
+  grid-template-columns: 0.95fr 1.05fr;
+}
+
+.mission-box {
+  background: rgba(232, 245, 233, 0.75);
+  border: 1px solid rgba(46, 125, 50, 0.15);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.mission-box--wide {
+  height: 100%;
+}
+
+.subheading {
+  color: var(--green-dark);
+  font-size: 1.25rem;
+  margin-bottom: 0.9rem;
+}
+
+.check-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1.25rem;
+}
+
+.check-list li {
+  padding-left: 1.6rem;
+  position: relative;
+  margin: 0.6rem 0;
+  color: var(--text);
+}
+
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  color: var(--green);
+  font-weight: 800;
+}
+
+.check-list--compact li {
+  margin: 0.45rem 0;
+  font-size: 0.98rem;
+}
+
+.steps {
+  margin: 0;
+  padding-left: 1.4rem;
+  color: var(--text);
+}
+
+.steps li {
+  margin: 0.7rem 0;
+}
+
+.mini-banner {
+  margin-top: 1.25rem;
+  padding: 1rem 1rem;
+  border-radius: 14px;
+  background: rgba(27, 94, 32, 0.07);
+  border: 1px solid rgba(27, 94, 32, 0.12);
+}
+
+.mini-banner--leaf {
+  background: linear-gradient(135deg, rgba(46, 125, 50, 0.12), rgba(27, 94, 32, 0.06));
+}
+
+.mini-banner-title {
+  font-weight: 900;
+  margin-bottom: 0.15rem;
+  color: var(--green-dark);
+}
+
+.mini-banner-desc {
+  color: var(--muted);
+}
+
+.quote {
+  font-style: italic;
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.plan-card {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 1.4rem 1.4rem;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+  border-top: 6px solid var(--green);
+}
+
+.plan-card--bajo {
+  border-top-color: #2e7d32;
+}
+
+.plan-card--medio {
+  border-top-color: #156f2a;
+}
+
+.plan-card--alto {
+  border-top-color: #0f5f22;
+}
+
+.plan-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.plan-head h3 {
+  color: var(--green-dark);
+  font-size: 1.25rem;
+}
+
+.badge {
+  background: rgba(46, 125, 50, 0.12);
+  border: 1px solid rgba(46, 125, 50, 0.2);
+  color: var(--green-dark);
+  font-weight: 900;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  white-space: nowrap;
+}
+
+.plan-text {
+  color: var(--muted);
+  margin-top: 0.75rem;
+  line-height: 1.75;
+}
+
+.price-block {
+  background: rgba(46, 125, 50, 0.06);
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  border-radius: 16px;
+  padding: 1rem 1rem;
+  margin-top: 1rem;
+}
+
+.price-label {
+  font-weight: 900;
+  color: var(--green-dark);
+  margin-bottom: 0.2rem;
+}
+
+.price-value {
+  font-weight: 1000;
+  color: #1b5e20;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.price-sub {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+.price-example {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.estimator {
+  background: rgba(232, 245, 233, 0.6);
+  border: 1px solid rgba(46, 125, 50, 0.15);
+  border-radius: 18px;
+  padding: 1.5rem;
+}
+
+.field {
+  margin: 0.9rem 0;
+}
+
+.field label {
+  display: block;
+  font-weight: 900;
+  color: var(--green-dark);
+  margin-bottom: 0.45rem;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 0.9rem 0.9rem;
+  border-radius: 12px;
+  border: 2px solid #e0e0e0;
+  background: var(--white);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 4px var(--focus);
+}
+
+.estimator-actions {
+  margin-top: 1rem;
+}
+
+.estimator-actions button {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  padding: 0.85rem 1.2rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.estimator-actions button:hover {
+  transform: translateY(-1px);
+}
+
+.estimator-results {
+  margin-top: 1.1rem;
+  background: var(--white);
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.result-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.55rem 0;
+  color: var(--muted);
+}
+
+.result-line strong {
+  color: var(--green-dark);
+  font-weight: 1000;
+}
+
+.calculator-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  border-radius: 18px;
+  padding: 1.25rem;
+}
+
+.info-card--alt {
+  background: linear-gradient(135deg, rgba(46, 125, 50, 0.08), rgba(27, 94, 32, 0.04));
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.feature-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(232, 245, 233, 0.7);
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  border-radius: 18px;
+}
+
+.feature-icon {
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-title {
+  color: var(--green-dark);
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive del rediseño */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .split--calculator {
+    grid-template-columns: 1fr;
+  }
+
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
