@@ -8,10 +8,15 @@ const contactForm = document.getElementById("contact-form");
 const formStatus = document.getElementById("form-status");
 
 function toggleChatbot() {
+  if (!chatbot) return;
   chatbot.classList.toggle("active");
-  if (chatbot.classList.contains("active")) {
-    chatbotToggle.style.display = "none";
-    document.getElementById("user-input").focus();
+  const isOpen = chatbot.classList.contains("active");
+  if (chatbotToggle) chatbotToggle.style.display = isOpen ? "none" : "flex";
+  if (chatbotToggle) chatbotToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
+  if (isOpen) {
+    const input = document.getElementById("user-input");
+    if (input) input.focus();
 
     // Mensaje inicial la primera vez que se abre
     if (messages && messages.children.length === 0) {
@@ -22,8 +27,6 @@ function toggleChatbot() {
         )
       );
     }
-  } else {
-    chatbotToggle.style.display = "flex";
   }
 }
 
@@ -153,6 +156,13 @@ if (contactForm) {
   contactForm.addEventListener("submit", handleFormSubmit);
 }
 
+// Abrir/cerrar chatbot con el botón flotante
+if (chatbotToggle) {
+  chatbotToggle.addEventListener("click", () => {
+    toggleChatbot();
+  });
+}
+
 // ============================================================
 // Cotizador referencial de seguros (estático, sin backend)
 // ============================================================
@@ -219,6 +229,32 @@ if (planSelector) {
 
 // Calcula al cargar si ya existe el cotizador
 calcularEstimado();
+
+// ============================================================
+// Smooth scroll y navegación por anclas
+// (para que "Ver seguros" y "Solicitar cotización" funcionen siempre)
+// ============================================================
+function safeScrollToHash(hash) {
+  if (!hash || hash === "#") return;
+  const id = hash.replace("#", "");
+  const target = document.getElementById(id);
+  if (!target) return;
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener("click", (e) => {
+    const href = a.getAttribute("href");
+    if (!href || href === "#") return;
+    // Solo interceptamos si el destino existe
+    const id = href.replace("#", "");
+    const target = document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    safeScrollToHash(href);
+    history.pushState(null, "", href);
+  });
+});
 
 // ============================================================
 // Resaltar pestaña del menú según scroll
