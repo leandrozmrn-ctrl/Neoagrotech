@@ -1,0 +1,24 @@
+{
+  "name": "neoagrotech",
+  "version": "1.0.0",
+  "description": "NeoAgroTech - Plataforma web de seguros agrícolas con retorno de inversión",
+  "main": "server/https-server.js",
+  "scripts": {
+    "start": "node server/https-server.js",
+    "dev": "node server/https-server.js",
+    "generate-cert": "node server/generate-cert.js",
+    "setup": "npm run generate-cert && npm start"
+  },
+  "keywords": [
+    "seguros",
+    "agricultura",
+    "chile",
+    "neoagrotech"
+  ],
+  "author": "NeoAgroTech",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
+

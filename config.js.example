@@ -1,0 +1,16 @@
+// NeoAgroTech - Configuración de API
+// Copia este archivo a config.js y agrega tu API key de OpenAI
+
+// Para obtener una API key de OpenAI:
+// 1. Ve a https://platform.openai.com/api-keys
+// 2. Crea una nueva API key
+// 3. Cópiala aquí (sin comillas)
+
+const CONFIG = {
+  // API Key de OpenAI (opcional - si no la configuras, el chatbot usará respuestas predefinidas)
+  OPENAI_API_KEY: 'TU_API_KEY_AQUI'
+};
+
+// Si usas este archivo, actualiza script.js para importarlo
+
+
